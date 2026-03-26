@@ -6,16 +6,17 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
+pacman -Syu --noconfirm \
+        kvantum         \
+        lxqt-qtplugin   \
+        pipewire-audio  \
+        pipewire-jack   \
+        qt6-multimedia  \
+        qt6ct
+
 if [ "$ARCH" = "x86_64" ]; then
-    pacman -Syu --noconfirm \
-            mixxx           \
-            pipewire-audio  \
-            pipewire-jack
+    pacman -Syu --noconfirm mixxx
 else
-    pacman -Syu --noconfirm \
-        pipewire-audio \
-        pipewire-jack  \
-        qt6-multimedia
     make-aur-package mixxx-git
     #git clone https://gitlab.archlinux.org/archlinux/packaging/packages/mixxx
     #cd mixxx
