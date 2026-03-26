@@ -6,9 +6,11 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm \
-    mixxx    \
-    protobuf
+if [ "$ARCH" = "x86_64" ]; then
+    pacman -Syu --noconfirm mixxx
+else
+    mixxx-git
+fi
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
