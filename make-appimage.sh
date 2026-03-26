@@ -15,6 +15,7 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/icons/hicolor/scalable/apps/mixxx.svg
 export DESKTOP=/usr/share/applications/org.mixxx.Mixxx.desktop
 export DEPLOY_QT=1
+export DEPLOY_PIPEWIRE=1
 
 # Deploy dependencies
 quick-sharun /usr/bin/mixxx /usr/share/mixxx/*
